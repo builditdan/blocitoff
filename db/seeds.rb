@@ -35,17 +35,5 @@ standard = User.create!(
    role: 'premium'
  )
 
-#let(:my_wiki) {Wiki.create!(title: "My first wiki", body: " This is some cool text to add to my wiki", private: false, user_id: my_user.id)}
-
-
-5.times do
-   wiki = Wiki.create!(
-   title:   RandomData.random_sentence,
-   body:    RandomData.random_paragraph,
-   user_id: 1
-   )
-end
-
  puts "Seed finished"
  puts "#{User.count} users created"
- puts "#{Wiki.count} wikis created"

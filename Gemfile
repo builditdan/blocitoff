@@ -4,11 +4,14 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'rails', '4.2.5'
+
 group :production do
-   gem 'pg'
+   #gem 'pg'
    gem 'rails_12factor'
-   gem "faker"
 end
+
+gem "faker"
+
 
 gem 'bootstrap-sass'
 
@@ -35,7 +38,7 @@ group :development, :test do
   #Testing gems
   gem 'shoulda'
   gem 'rspec-rails', '~> 3.0'
-  gem "faker"
+
 
   #Gem to help with keeping your code DRY
   gem 'factory_girl_rails', '~> 4.0'

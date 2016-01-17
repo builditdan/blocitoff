@@ -1,5 +1,5 @@
 **== README**
-This is my first application as part of my bloc.io training. It will be a Wiki SaaS collaboration tool where users can create their own wikis.
+This is my second application as part of my bloc.io training. It will be a  self-destructing to-do list application.
 
 **Ruby Version Information**
 `ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]``

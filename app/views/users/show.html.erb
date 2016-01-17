@@ -23,20 +23,7 @@
            <% end %>
           account type<br>
           <br>
-          <% if current_user %>
-            <%if current_user.standard? %>
-              <%= link_to "Upgrade", new_charge_path, class: 'btn btn-danger' %>
-              <span style="color:black; font-size:100%">&nbsp;to a Premium Account!</span>
-           <%elsif current_user.premium? %>
-
-           <%= link_to "Downgrade", charge_path(current_user), class: 'btn btn-warning' %>
-           <span style="color:black; font-size:100%">&nbsp;to a Standard Account!</span>
-
-           <% end %>
-         <% end %>
-
-
-
+    
        </div>
      </div>
    </div>
