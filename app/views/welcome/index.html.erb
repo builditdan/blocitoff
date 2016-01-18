@@ -1,33 +1,24 @@
 <div class="container">
-  <div class="jumbotron" style="color:white; background-color:brown">
-     <h1>Wiki Pad: Social, Markdown Wikis</h1>
-     <p>Wiki Pad will let you create and edit your very own Wiki!</p>
-  
+  <div class="jumbotron banner-image" style="color:white; background-color:brown">
+     <h1>BloccitOff: Your task manager</h1>
+     <p>World's best self-destructing to-do lists!</p>
+
+     <% if !current_user %>
+       <div class="col-md-12">
+         <div id="sign-up" style = "color:white;">
+           <h4>Create your to-do lists today!</h4>
+           <%= link_to "Sign In", new_user_session_path %> or
+           <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+         </div>
+       </div>
+     <% end %>
   </div>
 
- <% if !current_user %>
-   <div class="col-md-12 style="text-align:center">
-     <div id="sign-up">
-       <h4>Create and share Markdown capable Wikis</h4>
-       <%= link_to "Sign In", new_user_session_path %> or
-       <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
-     </div>
-   </div>
- <% end %>
 
-   <div class="row">
-     <div class="col-md-4">
-       <h2>Be Creativity</h2>
-       <p>WikiPad will deliver food and water to those in need, all over the world.</p>
-     </div>
-     <div class="col-md-4">
-       <h2>Be Social</h2>
-       <p>WikiPad will deliver money and education to those in need, all over the world.</p>
-     </div>
-     <div class="col-md-4">
-       <h2>Learn More</h2>
-       <p>WikiPad will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira.</p>
-     </div>
-   </div>
+   <div class="row text-center">
+     <h2>Get Organized Today</h2>
+     <p>BloccitOff will make your life super fantastic with all your peers asking how do you stay so organized</p>
+     <p>The very best part is that it is absoultely free!
+  </div>
 
 </div>
