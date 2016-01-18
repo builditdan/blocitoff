@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
-
-<p>You can confirm your account email through the link below:</p>
+<p>Welcome <%= @email %> to BlocItNow!</p>
+<p>Before you can start creating to-do lists, you need to confirm your email address. To get started, just confirm your email address by clicking the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Hope you enjoy getting up and running with your to-do items. We're excited that you have joined the community!</p>
+
+
+<p>Best Regards, </p>
+
+<p>The BlocItOff Team</p>
