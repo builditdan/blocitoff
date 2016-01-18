@@ -1,7 +1,7 @@
 #!/bin/bash
-# My test scripts for WikiPad
+# My test scripts for blocitoff
 # $./run_tests.sh to execute
-echo "Running your scripts for WikiPad"
+echo "Running your scripts for Blocitoff"
 
 rspec spec/controllers/users_controller_spec.rb
 rspec spec/controllers/wikis_controller_spec.rb
