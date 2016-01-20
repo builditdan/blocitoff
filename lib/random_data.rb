@@ -28,11 +28,15 @@ module RandomData
   end
 
   def random_word
-    Faker::Hipster.words(1)    
+    Faker::Hipster.words(1)
   end
 
   def random_avatar_image
     Faker::Avatar.image
+  end
+
+  def random_user(low,high)
+    rand(low...high)
   end
 
 end

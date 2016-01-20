@@ -35,5 +35,13 @@ standard = User.create!(
    role: 'premium'
  )
 
+ 50.times do
+   item = Item.create!(
+   name:   RandomData.random_sentence,
+   user_id: RandomData.random_user(1, User.count)
+   )
+end
+
  puts "Seed finished"
  puts "#{User.count} users created"
+ puts "#{Item.count} to-do items created"
