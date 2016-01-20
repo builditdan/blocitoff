@@ -50,11 +50,7 @@
            <tbody>
              <% @items.each do |item| %>
                <tr>
-                 <td>
-                   <%= render partial: 'items/item', locals: {item: item} %>
-                 </td>
-                 <td>TBD</td>
-                 <td>TBD</td>
+                 <%= render partial: 'items/item', locals: {item: item} %>
               </tr>
              <% end %>
           </tbody>

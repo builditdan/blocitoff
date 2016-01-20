@@ -1,1 +1,11 @@
-<%= item.name %> </br> 
+<td>
+<%= item.name %> </br>
+</td>
+
+<td>TBD</td>
+
+<td>
+  <%= link_to "", user_item_path(item.user_id, item.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
+  <%# link_to "", show_items_path, method: :delete, class: 'glyphicon glyphicon-ok' %>
+
+</td>

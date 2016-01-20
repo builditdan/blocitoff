@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :items, only: [:new, :create]
+    # GET /users => User#index
+    # GET /users/:id => #show
+    # POST /users => #create
+    resources :items, only: [:new, :create, :destroy]
+      # GET /users/:user_id/items => Items#index
   end
 
   #get '/users/:id/items/new' => 'items#new', :as => :new_item
@@ -17,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
   get 'welcome/index'
-  get 'users/show/:user_id' => 'users#show', :as => :users_show
+  #get 'users/show/:user_id' => 'users#show', :as => :users_show
 
   root to: 'welcome#index'
   #root to: 'users#show'

@@ -21,12 +21,10 @@
   <div class="col-md-8">
     <%= form_for @item, url: user_items_path do |f| %>
       <div class="form-group">
-        <%= f.label :description %>
-        <%= f.text_field :name, class: 'form-control', placeholder: "Enter to-do name" %>
-        <%# render partial: 'form', locals: {f: f} %>
+        <%= render partial: 'items/form', locals: {f: f} %>
       </div>
-
       <%= f.submit "Save", class: 'btn btn-success' %>
+      <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
       <br>
       <br>
 

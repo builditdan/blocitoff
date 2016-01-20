@@ -1,12 +1,17 @@
+<% if @item.errors.any? %>
 
-  <%# if policy(@items).edit? %>
-    <%# link_to "Edit To-Do", items__path, class: 'btn btn-success' %>
-  <%# end %>
+      <div class="alert alert-danger">
 
+        <h4><%= pluralize(@item.errors.count, "error") %>.</h4>
+        <ul>
+          <% @item.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ul>
+      </div>
 
- <%# if policy(@wiki).destroy? %>
-   <%# link_to "Delete To-Do", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this to-do?'} %>
- <%# end %>
+<% end %>
+
 
  <div class="row">
      <div class="col-md-12">
@@ -22,21 +27,30 @@
            <tbody>
              <% @items.each do |item| %>
                <tr>
-                 <td>
-                   <%= render partial: 'items/item', locals: {item: item} %>
-                 </td>
-                 <td>TBD</td>
-                 <td>TBD</td>
-              </tr>
+                 <%= render partial: 'items/item', locals: {item: item} %>
+               </tr>
              <% end %>
           </tbody>
         </table>
      </div>
 <%# if policy(@items).new? %>
 
+<div class="row">
+    <div class="col-md-8">
 
-  <%= link_to "New To-Do", new_user_item_path(user_id:current_user.id), class: 'btn btn-success' %>
+  <%= form_for @item, url: user_items_path do |f| %>
+      <%= render partial: 'items/form', locals: {f: f} %>
+      <br>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
+    <br>
+  <% end %>
+
+  <br>
+  <%# link_to "New To-Do", new_user_item_path(user_id:current_user.id), class: 'btn btn-success' %>
   <br>
   <br>
 <%# end %>
 <br>
+
+</div<
