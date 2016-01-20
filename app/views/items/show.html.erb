@@ -1,0 +1,42 @@
+
+  <%# if policy(@items).edit? %>
+    <%# link_to "Edit To-Do", items__path, class: 'btn btn-success' %>
+  <%# end %>
+
+
+ <%# if policy(@wiki).destroy? %>
+   <%# link_to "Delete To-Do", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this to-do?'} %>
+ <%# end %>
+
+ <div class="row">
+     <div class="col-md-12">
+         <h3>Your To-Do List</h3>
+         <table class="table table-bordered table-striped">
+           <thead>
+             <tr>
+               <th>Description</th>
+               <th>Days left</th>
+               <th>Complete</th>
+             </tr>
+           </thead>
+           <tbody>
+             <% @items.each do |item| %>
+               <tr>
+                 <td>
+                   <%= render partial: 'items/item', locals: {item: item} %>
+                 </td>
+                 <td>TBD</td>
+                 <td>TBD</td>
+              </tr>
+             <% end %>
+          </tbody>
+        </table>
+     </div>
+<%# if policy(@items).new? %>
+
+
+  <%= link_to "New To-Do", new_user_item_path(user_id:current_user.id), class: 'btn btn-success' %>
+  <br>
+  <br>
+<%# end %>
+<br>

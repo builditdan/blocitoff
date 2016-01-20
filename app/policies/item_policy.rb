@@ -1,0 +1,4 @@
+class ItemPolicy < ApplicationPolicy
+
+
+end

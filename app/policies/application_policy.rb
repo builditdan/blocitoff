@@ -15,63 +15,28 @@ class ApplicationPolicy
   end
 
   def show?
-
-  # if @record.private
-  #    if (!@user.blank? && @user.admin?) or (!@user.blank? && @user.premium?)
-  #      true
-  #    else
-  #      false
-  #    end
-  #  else
-  #    true
-  #  end
-
+    user_logged_in?
   end
 
   def create?
-
     user_logged_in?
-
   end
 
   def new?
-
-    if user == nil
-      false
-    else
-      true
-    end
-
+    user_logged_in?
   end
 
   def update?
-
-    # wiki_policy.rb is handling policy validations
-
+    user_logged_in?
   end
-
-  #def edit?
-#      true
-#  end
 
   def destroy?
-
-    if !user_logged_in?
-      false
-    elsif user.admin?
-       true
-    else
-      false
-    end
-
+    user_logged_in?
   end
-
-
 
   def scope
     Pundit.policy_scope!(user, record.class)
   end
-
 
   class Scope
     attr_reader :user, :scope

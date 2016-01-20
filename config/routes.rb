@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
 
 
+
+  get 'new/show'
+
   devise_for :users
+
+  resources :users do
+    resources :items, only: [:new, :create]
+  end
+
+  #get '/users/:id/items/new' => 'items#new', :as => :new_item
+  get '/users/:user_id/items/show' => 'items#show', :as => :show_items
+  #post '/users/:id/items/:item' => 'items#create' #, :as => :show_items
+
+
   get 'welcome/about'
   get 'welcome/index'
-  get 'users/show'
+  get 'users/show/:user_id' => 'users#show', :as => :users_show
 
-  #root to: 'welcome#index'
-  root to: 'users#show'
+  root to: 'welcome#index'
+  #root to: 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
