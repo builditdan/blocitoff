@@ -3,6 +3,5 @@ namespace :todo do
   task delete_items: :environment do
        Item.where("created_at <= ?", Time.now - 7.days).destroy_all
   end
-
-
+ # run from the command line using "rake todo:delete_items"
 end
