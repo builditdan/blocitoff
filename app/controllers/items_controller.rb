@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
       authorize @items
       @item = Item.new
       authorize @item
+
   end
 
   def new
@@ -12,10 +13,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-
       @item = Item.new(item_params)
       @item.user_id = current_user.id
       @user = User.find(current_user.id)
+      @new_item = Item.new
       authorize @item
       if !@item.save
         flash.now[:alert] = "There was an error saving the item. Please try again."

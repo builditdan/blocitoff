@@ -1,4 +1,14 @@
-<div >
-  <%= f.label :add %>
-  <%= f.text_field :name, class: 'form-control', placeholder: "Enter to-do description" %>
+
+  <%# f.label :add %>
+  <%# f.text_field :name, class: 'form-control', placeholder: "Enter to-do description" %>
+
+<div class="js-new-item">
+  <%= form_for item, url: user_items_path, remote: true do |f| %>
+    <%= f.label :add %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter to-do description" %>
+    <br>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
+    <br>
+  <% end %>
 </div>

@@ -37,7 +37,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'rspec-rails', '~> 3.0'
 
-
   #Gem to help with keeping your code DRY
   gem 'factory_girl_rails', '~> 4.0'
 
