@@ -24,12 +24,10 @@
                <th>Complete</th>
              </tr>
            </thead>
-           <tbody>
-             <% @items.each do |item| %>
-               <tr>
-                 <%= render partial: 'items/item', locals: {item: item} %>
-               </tr>
-             <% end %>
+           <tbody class="js-items">
+                <% @items.each do |item| %>
+                      <%= render partial: 'items/item', locals: {item: item} %>
+                <% end %>
           </tbody>
         </table>
      </div>
@@ -38,8 +36,10 @@
 <div class="row">
     <div class="col-md-8">
 
-  <%= form_for @item, url: user_items_path do |f| %>
-      <%= render partial: 'items/form', locals: {f: f} %>
+  <%= form_for @item, url: user_items_path, remote: true do |f| %>
+
+        <%= render partial: 'items/form', locals: {f: f} %>
+
       <br>
     <%= f.submit "Save", class: 'btn btn-success' %>
     <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>

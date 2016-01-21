@@ -10,12 +10,12 @@ Rails.application.routes.draw do
     # GET /users => User#index
     # GET /users/:id => #show
     # POST /users => #create
-    resources :items, only: [:new, :create, :destroy]
+    resources :items, only: [:new, :create, :destroy, :index]
       # GET /users/:user_id/items => Items#index
   end
 
   #get '/users/:id/items/new' => 'items#new', :as => :new_item
-  get '/users/:user_id/items/show' => 'items#show', :as => :show_items
+  #get '/users/:user_id/items/show' => 'items#show', :as => :show_items
   #post '/users/:id/items/:item' => 'items#create' #, :as => :show_items
 
 

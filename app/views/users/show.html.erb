@@ -47,12 +47,10 @@
                <th>Complete</th>
              </tr>
            </thead>
-           <tbody>
-             <% @items.each do |item| %>
-               <tr>
-                 <%= render partial: 'items/item', locals: {item: item} %>
-              </tr>
-             <% end %>
+           <tbody class="js-items">
+                <% @items.each do |item| %>
+                      <%= render partial: 'items/item', locals: {item: item} %>
+                <% end %>
           </tbody>
         </table>
      </div>
