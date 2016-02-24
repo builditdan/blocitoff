@@ -97,7 +97,7 @@ config.action_mailer.smtp_settings = {
   }
 
   #ActionMail config
-  config.action_mailer.default_url_options = { host: 'localhost', port:3000}
+  config.action_mailer.default_url_options = { host: 'https://bookemdanno.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true
