@@ -95,3 +95,5 @@ config.action_mailer.smtp_settings = {
     user_name: ENV['GMAIL_EMAIL'], # Rails.application.secrets.email_provider_username,
     password: ENV['GMAIL_PASSWORD'] # Rails.application.secrets.email_provider_password
   }
+
+end
