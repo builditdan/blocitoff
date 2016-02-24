@@ -96,6 +96,7 @@ config.action_mailer.smtp_settings = {
     password: ENV['GMAIL_PASSWORD'] # Rails.application.secrets.email_provider_password
   }
 
+
   #ActionMail config
   config.action_mailer.default_url_options = { host: 'https://blocitoffa.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
