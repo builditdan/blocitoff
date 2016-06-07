@@ -1,38 +1,63 @@
-**== README**
-This is my second application as part of my bloc.io training. It will be a  self-destructing to-do list application.
 
-**Ruby Version Information**
-`ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]``
+### URL
+[http://blocitoffa.herokuapp.com/welcome/index](http://blocitoffa.herokuapp.com/welcome/index)
 
-**System Dependencies**
-RSpec
-SqlLite
+### Github URL
+[https://github.com/builditdan/blocitoff](https://github.com/builditdan/blocitoff)
 
-------
+### Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Clone the Github application**
 
-Things you may want to cover:
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
 
-* Ruby version
+**Create the database**
 
-* System dependencies
+```
+rake db:create
+```
 
-* Configuration
+**Migrating and seeding the database**
 
-* Database creation
+```
+rake db:migrate
+rake db:seed
+```
 
-* Database initialization
+**Starting the local server**
 
-* How to run the test suite
+```
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+### Background and General Information
+I built this application during my Ruby on Rails training with [bloc.io](https://bloc.io).
 
-* ...
+It is a website where you can enter tasks and they will automatically self-destruct in 7 days. By automatically deleting the tasks it provides you that motivation to get your tasks done before they expire.
 
+### Design Information
+I used [bootstrap](http://getbootstrap.com/) to aide in design and layout. I leveraged gems [devise](https://github.com/plataformatec/devise) and [pundit](https://github.com/elabs/pundit) for account management. Gained more hands-on experience using [partials](http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials) to keep my code dry.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To create a more dynamic feel to the task list I used [Ajax](http://guides.rubyonrails.org/working_with_javascript_in_rails.html) to add and mark tasks complete without having to do a page refresh. To keep those tasks expiring - I created a custom [Rake](http://guides.rubyonrails.org/command_line.html#rake) job that would purge tasks after seven days.
+
+### Highlights on Gem's used
+* [`rspec`](https://github.com/rspec/rspec-rails) for testing
+* [`postgres`](http://www.postgresql.org/) for my production database, mysql for development
+* [`devise`](https://github.com/plataformatec/devise) to aide in account management
+* [`pundit`](https://github.com/elabs/pundit) to aide in security policies
+* [`redcarpet`](https://github.com/vmg/redcarpet) for handling markdown
+* [`byebug`](https://github.com/deivid-rodriguez/byebug) debugging helper
+* [`better_errors`](https://github.com/charliesome/better_errors) better error messages
+* [`binding_of_caller`](https://github.com/banister/binding_of_caller) better debug messages
+* [`faker`](https://github.com/stympy/faker) handy gem for generating fake data
+
+### Additional comments
+It is NOT a responsive site so additional work would be needed in that area.
+
+The Rake task that purges expired tasks only runs manually. A future enhancement would be to add it to scheduler like [Cron](https://en.wikipedia.org/wiki/Cron).
+
+### Disclaimer
+I provide this Web site as an example of my work. It is **not a production site** and subject to **removal** along with any content that you may have created. If you are interested in using this site or the code - feel free to download or contact me with your questions.
